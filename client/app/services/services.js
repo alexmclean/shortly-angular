@@ -7,7 +7,6 @@ angular.module('shortly.services', [])
       method: 'GET',
       url: '/api/links'
     }).then(function (resp) {
-      // console.log(resp.data);
       return resp.data;
     });
   };
@@ -22,7 +21,6 @@ angular.module('shortly.services', [])
       return resp.data;
     });
   };
-  
   return {
     getLinks: getLinks,
     postLink: postLink

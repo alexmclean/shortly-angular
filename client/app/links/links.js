@@ -5,15 +5,11 @@ angular.module('shortly.links', [])
   // make links clickable, store links, increment count, and add links
   Links.getLinks ()
   .then(function (x) {
-    // console.log (x);
-    $scope.links = x;
+    $scope.data = x;
   });
 
-  //Links.postLink('http://apple.com');
-
-
-
-  $scope.handleClick = function(ind){    
-    this.links[ind];
-  }
+  $scope.handleClick = function (ind) {
+    console.log(this.data[ind]);
+    this.data[ind].visits++;
+  };
 });
