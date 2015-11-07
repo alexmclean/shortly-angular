@@ -1,9 +1,10 @@
 <div id='container' ng-app="shortly.links">
-  <div class='link' ng-controller="LinksController" ng-repeat="link in data">
+  <input value="" placeholder="filter links" ng-model="search.title">
+  <div class='link' ng-controller="LinksController" ng-repeat="link in data | filter:search">
     <img src='../../assets/redirect_icon.png'/>
     <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
     <div class='title'>{{link.title}}</div>
     <div class='original'>{{link.url}}</div>
-    <a href="{{link.url}}" > <div ng-click="handleClick($index)">{{link.base_url}}/{{link.code}}</div> </a>
+    <div ng-click="handleClick($index)">{{link.base_url}}/api/links/{{link.code}}</div>
   </div>
 </div>
