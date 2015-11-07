@@ -2,17 +2,17 @@ angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
   // Your code here
-  var getLinks = function() {
+  var getLinks = function () {
     return $http({
       method: 'GET',
-      url: '/api/links',
+      url: '/api/links'
     }).then(function (resp) {
       // console.log(resp.data);
       return resp.data;
-    });    
-  }
+    });
+  };
 
-  var postLink = function(link){
+  var postLink = function (link) {
     return $http({
       method: 'POST',
       url: '/api/links',
@@ -21,13 +21,12 @@ angular.module('shortly.services', [])
       console.log(resp.data);
       return resp.data;
     });
-  }
-
-
+  };
+  
   return {
     getLinks: getLinks,
     postLink: postLink
-  }
+  };
 })
 
 .factory('Auth', function ($http, $location, $window) {
