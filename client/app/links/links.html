@@ -1,3 +1,6 @@
-<div id='container'>
-  <!-- Your html here -->
+<div id='container' ng-app="shortly.links">
+<ul>
+  <li ng-controller="LinksController" ng-repeat="link in links">{{link}}</li>
+</ul>
 </div>
+ 
